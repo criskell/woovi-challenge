@@ -20,7 +20,7 @@ const config: webpack.Configuration = {
     }),
     nodeExternals({
       modulesDir: path.resolve(__dirname, "../../node_modules"),
-      allowlist: ["@challenge"],
+      allowlist: ["@woovi-challenge"],
     }),
   ],
   mode: "development",
