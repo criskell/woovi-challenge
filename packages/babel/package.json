@@ -1,0 +1,12 @@
+{
+  "name": "@woovi-challenge/babel",
+  "version": "1.0.0",
+  "main": "babel.config.json",
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2"
+  }
+}

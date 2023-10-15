@@ -1,0 +1,13 @@
+{
+  "name": "woovi-challenge",
+  "private": true,
+  "description": "Woovi Fullstack Challenge",
+  "license": "MIT",
+  "author": "criskell",
+  "scripts": {
+    "dev": "pnpm run --parallel dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
