@@ -1,6 +1,7 @@
 import { Options } from "koa-graphql";
 
 import { schema } from "./schema";
+import { createContext } from "./context";
 
 export const makeGraphQlHttpOptions = (): Options => ({
   schema,
@@ -12,4 +13,5 @@ export const makeGraphQlHttpOptions = (): Options => ({
     stack: error.stack ? error.stack.split("\n") : [],
     path: error.path,
   }),
+  context: createContext(),
 });
