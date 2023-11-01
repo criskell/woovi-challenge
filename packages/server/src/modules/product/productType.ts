@@ -1,5 +1,5 @@
 import { GraphQLNonNull, GraphQLObjectType, GraphQLString } from "graphql";
-import { globalIdField } from "graphql-relay";
+import { connectionDefinitions, globalIdField } from "graphql-relay";
 
 import { nodeInterface, registerTypeLoader } from "../../graphql/typeRegistry";
 import ProductLoader from "./productLoader";
@@ -13,6 +13,11 @@ export const ProductType = new GraphQLObjectType({
     priceInCents: { type: new GraphQLNonNull(GraphQLString) },
   },
   interfaces: [nodeInterface],
+});
+
+export const ProductConnection = connectionDefinitions({
+  name: "ProductConnection",
+  nodeType: ProductType,
 });
 
 registerTypeLoader(ProductType, ProductLoader.load);
