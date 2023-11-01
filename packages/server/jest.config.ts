@@ -14,6 +14,8 @@ const config: Config = {
   collectCoverage: true,
   coverageDirectory: "coverage",
   coverageProvider: "v8",
+
+  testPathIgnorePatterns: ["/node_modules/", "./dist"],
 };
 
 export default config;
