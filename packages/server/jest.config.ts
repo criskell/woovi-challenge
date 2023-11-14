@@ -14,8 +14,12 @@ const config: Config = {
   collectCoverage: true,
   coverageDirectory: "coverage",
   coverageProvider: "v8",
+  collectCoverageFrom: ["./src/**/*.ts"],
+  coverageReporters: ["clover", "json", "lcov"],
 
   testPathIgnorePatterns: ["/node_modules/", "./dist"],
+
+  testEnvironment: "./test/environment.ts",
 };
 
 export default config;
