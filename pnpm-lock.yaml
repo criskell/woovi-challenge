@@ -66,6 +66,9 @@ importers:
         specifier: ^7.6.0
         version: 7.6.0
     devDependencies:
+      '@types/jest':
+        specifier: ^29.5.8
+        version: 29.5.8
       '@types/koa':
         specifier: ^2.13.9
         version: 2.13.9
@@ -1895,6 +1898,13 @@ packages:
       '@types/istanbul-lib-report': 3.0.2
     dev: true
 
+  /@types/jest@29.5.8:
+    resolution: {integrity: sha512-fXEFTxMV2Co8ZF5aYFJv+YeA08RTYJfhtN5c9JSv/mFEMe+xxjufCb+PHL+bJcMs/ebPUsBu+UNTEz+ydXrR6g==}
+    dependencies:
+      expect: 29.7.0
+      pretty-format: 29.7.0
+    dev: true
+
   /@types/json-schema@7.0.13:
     resolution: {integrity: sha512-RbSSoHliUbnXj3ny0CNFOoxrIDV6SUGyStHsvDqosw6CkdPV8TtWGlfecuK4ToyMEAql6pzNxgCFKanovUzlgQ==}
     dev: true
@@ -1946,8 +1956,8 @@ packages:
   /@types/node@20.8.3:
     resolution: {integrity: sha512-jxiZQFpb+NlH5kjW49vXxvxTjeeqlbsnTAdBTKpzEdPs9itay7MscYXz3Fo9VYFEsfQ6LJFitHad3faerLAjCw==}
 
-  /@types/nodemon@1.19.4:
-    resolution: {integrity: sha512-xWfDFY0hH9TRprHD1N0/Lp0dkze/vahRxLMN3cgW+PGnmtSzMXaNlTeWmSmlvefXFv5L0spheNZ0XEFB/O9ttQ==}
+  /@types/nodemon@1.19.5:
+    resolution: {integrity: sha512-jUKYdrnwLp4jMztMdQEJnF4lBhthCfqE7P6cYCIy0txMJrSFtKqs2HjmyEsyQueLjZjve0IjJ1S+20DtgJpUjA==}
     dependencies:
       '@types/node': 20.8.3
     dev: true
@@ -4636,7 +4646,7 @@ packages:
     peerDependencies:
       webpack: 4 || 5
     dependencies:
-      '@types/nodemon': 1.19.4
+      '@types/nodemon': 1.19.5
       nodemon: 3.0.1
       webpack: 5.88.2(webpack-cli@5.1.4)
     dev: true

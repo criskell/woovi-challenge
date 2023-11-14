@@ -11,9 +11,7 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "sourceMap": true,
-    "noEmitOnError": true,
     "resolveJsonModule": true
   }
 }
