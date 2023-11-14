@@ -7,7 +7,8 @@ import ProductLoader from "./productLoader";
 export const productConnectionField = {
   products: {
     type: new GraphQLNonNull(ProductConnection.connectionType),
-    args: { ...connectionArgs },
-    resolve: (_, args, context) => ProductLoader.loadAll(context, args),
+    args: connectionArgs,
+    resolve: (_: unknown, args: unknown, context: unknown) =>
+      ProductLoader.loadAll(context, args),
   },
 };
