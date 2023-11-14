@@ -80,7 +80,7 @@ type Mutation {
 }
 
 type createProductPayload {
-  product: Product
+  productEdge: ProductConnectionEdge
   clientMutationId: String
 }
 

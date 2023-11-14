@@ -17,8 +17,10 @@ describe("CreateProductMutation", () => {
     const mutation = `
       mutation CreateProductMutation($input: createProductInput!) {
         createProduct(input: $input) {
-          product {
-            id
+          productEdge {
+            node {
+              id
+            }
           }
         }
       }

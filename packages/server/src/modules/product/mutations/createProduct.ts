@@ -1,8 +1,9 @@
 import { GraphQLInt, GraphQLNonNull, GraphQLString } from "graphql";
-import { mutationWithClientMutationId } from "graphql-relay";
+import { mutationWithClientMutationId, toGlobalId } from "graphql-relay";
 
 import { ProductModel } from "../productModel";
-import { ProductType } from "../productType";
+import { ProductConnection } from "../productType";
+import ProductLoader from "../productLoader";
 
 export const createProduct = mutationWithClientMutationId({
   name: "createProduct",
@@ -16,15 +17,26 @@ export const createProduct = mutationWithClientMutationId({
 
     await newProduct.save();
 
-    return newProduct.toObject();
+    return {
+      id: newProduct._id,
+    };
   },
   outputFields: {
-    product: {
-      type: ProductType,
-      resolve: ({ _id, ...product }) => ({
-        id: _id,
-        ...product,
-      }),
+    productEdge: {
+      type: ProductConnection.edgeType,
+      resolve: async ({ id }, _, ctx) => {
+        const product = await ProductLoader.load(ctx, id);
+
+        if (!product) {
+          return null;
+        }
+
+        return {
+          cursor: toGlobalId("Product", product._id),
+          node: product,
+        };
+      },
     },
   },
+  extensions: {},
 });
